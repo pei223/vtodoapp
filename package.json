@@ -1,0 +1,16 @@
+{
+  "name": "todoapp",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "^3.2.0",
+    "axios": "^0.17.1",
+    "coffeescript": "1.12.7",
+    "vue": "^2.5.13",
+    "vue-loader": "^13.7.0",
+    "vue-router": "^3.0.1",
+    "vue-template-compiler": "^2.5.13"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^2.11.0"
+  }
+}

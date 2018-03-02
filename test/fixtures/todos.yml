@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  todo: MyText
+  deadline: 2018-01-15 08:44:15
+  finish: false
+
+two:
+  title: MyString
+  todo: MyText
+  deadline: 2018-01-15 08:44:15
+  finish: false
