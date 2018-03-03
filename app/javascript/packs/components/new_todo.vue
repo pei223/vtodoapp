@@ -1,33 +1,35 @@
 <template>
   <div class="container">
     <navbar v-bind="{setTokenAPI, updateTokenAPI}"></navbar>
-    <h2 class="title">TODO新規登録</h2>
-    <form class="form-horizontal todo-form">
-      <!-- タイトル -->
-      <div class="form-group">
-        <p class="error-msg" id="title-err-msg">タイトルを入力してください</p>
-        <label for="input-title" class="form-label">Title:</label>
-        <input id="input-title" class="form-control" v-model="title" placeholder="タイトル">
-      </div>
-      <!-- TODO本文 -->
-      <div class="form-group">
-        <p class="error-msg" id="todo-err-msg">TODOを入力してください</p>
-        <label for="input-todo" class="form-label">TODO:</label>
-        <textarea id="input-todo" class="form-control" rows="3" v-model="todo"></textarea>
-      </div>
-      <!-- TODOのデッドライン -->
-      <div class="row">
-        <div class="form-group col-sm-12 col-xs-12 col-md-4 col-lg-4">
-          <label for="input-deadline" class="form-label">期限:</label>
-          <input id="input-deadline" type="datetime-local" class="form-control" v-model="deadline">
+    <div class="col-sm-12 col-xs-12 col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
+      <h2 class="title">TODO新規登録</h2>
+      <form class="form-horizontal todo-form">
+        <!-- タイトル -->
+        <div class="form-group">
+          <p class="error-msg" id="title-err-msg">タイトルを入力してください</p>
+          <label for="input-title" class="form-label">Title:</label>
+          <input id="input-title" class="form-control" v-model="title" placeholder="タイトル">
         </div>
-      </div>
-      <br><br>
-      <!-- 登録ボタン -->
-      <div class="row form-group">
-        <button type="button" class="btn btn-primary col-sm-12 col-xs-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3" @click="addTodo">add TODO</button>
-      </div>
-    </form>
+        <!-- TODO本文 -->
+        <div class="form-group">
+          <p class="error-msg" id="todo-err-msg">TODOを入力してください</p>
+          <label for="input-todo" class="form-label">TODO:</label>
+          <textarea id="input-todo" class="form-control" rows="3" v-model="todo"></textarea>
+        </div>
+        <!-- TODOのデッドライン -->
+        <div class="row">
+          <div class="form-group col-sm-12 col-xs-12 col-md-4 col-lg-4">
+            <label for="input-deadline" class="form-label">期限:</label>
+            <input id="input-deadline" type="datetime-local" class="form-control" v-model="deadline">
+          </div>
+        </div>
+        <br><br>
+        <!-- 登録ボタン -->
+        <div class="row form-group">
+          <button type="button" class="btn btn-primary col-sm-12 col-xs-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3" @click="addTodo">add TODO</button>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
 

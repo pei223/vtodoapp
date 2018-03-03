@@ -1,28 +1,30 @@
 <template>
   <div class="container">
     <navbar></navbar>
-    <h2 class="title">ユーザー登録</h2>
-    <form>
-      <!-- メールアドレス -->
-      <div class="form-group">
-        <p class="error-msg" id="email-err-msg"></p>
-        <label for="email">E-mail</label>
-        <input type="text" id="email" class="form-control" name="email" v-model="email" />
-      </div>
-      <!-- パスワード -->
-      <div class="form-group">
-        <p class="error-msg" id="password-err-msg"></p>
-        <label for="password">パスワード</label>
-        <input type="password" id="password" class="form-control" name="password" v-model="password"/>
-      </div>
-      <!-- パスワード再入力 -->
-      <div class="form-group">
-        <p class="error-msg" id="password_confirmation-err-msg"></p>
-        <label for="password_confirmation">パスワード再入力</label>
-        <input type="password" id="password_confirmation" class="form-control"  name="password_confirmation" v-model="password_confirmation" />
-      </div>
-      <button type="button" class="btn btn-primary" @click="signUp">登録する</button>
-    </form>
+    <div class="col-sm-12 col-xs-12 col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
+      <h2 class="title">ユーザー登録</h2>
+      <form>
+        <!-- メールアドレス -->
+        <div class="form-group">
+          <p class="error-msg" id="email-err-msg"></p>
+          <label for="email">E-mail</label>
+          <input type="text" id="email" class="form-control" name="email" v-model="email" />
+        </div>
+        <!-- パスワード -->
+        <div class="form-group">
+          <p class="error-msg" id="password-err-msg"></p>
+          <label for="password">パスワード</label>
+          <input type="password" id="password" class="form-control" name="password" v-model="password"/>
+        </div>
+        <!-- パスワード再入力 -->
+        <div class="form-group">
+          <p class="error-msg" id="password_confirmation-err-msg"></p>
+          <label for="password_confirmation">パスワード再入力</label>
+          <input type="password" id="password_confirmation" class="form-control"  name="password_confirmation" v-model="password_confirmation" />
+        </div>
+        <button type="button" class="btn btn-primary" @click="signUp">登録する</button>
+      </form>
+    </div>
   </div>
 </template>
 <script>

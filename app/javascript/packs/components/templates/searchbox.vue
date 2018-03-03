@@ -12,7 +12,7 @@
     </div>
     <br>
     <!-- 検索ボックス -->
-    <div class="container">
+    <div>
       <div class="searchbox row">
         <form>
           <!-- ワード検索 -->
@@ -154,7 +154,7 @@ export default {
       // 検索条件の初期化
       this.search_word = '';
       this.search_target = 'title';
-      this.todo_condition = 'both';
+      this.todo_condition = 'false';
       this.sorting_way = 'deadline';
       this.order = 'DESC';
       this.searchTodos();

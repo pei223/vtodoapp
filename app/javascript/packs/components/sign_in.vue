@@ -1,22 +1,24 @@
 <template>
   <div class="container">
     <navbar v-bind="{}"></navbar>
-    <h2 class="title">ログイン</h2>
-    <form>
-      <!-- メールアドレス -->
-      <div class="form-group">
-        <p class="error-msg" id="email-err-msg">メールアドレスを入力してください</p>
-        <label for="email">E mail</label>
-        <input type="text" class="form-control" name="email" id="email" v-model="email">
-      </div>
-      <!-- パスワード -->
-      <div class="form-group">
-        <p class="error-msg" id="password-err-msg">パスワードを入力してください</p>
-        <label for="password">パスワード</label>
-        <input type="password" class="form-control" name="password" id="password" v-model="password">
-      </div>
-      <button type="button" @click="signIn()" class="btn btn-primary">ログイン</button>
-    </form>
+    <div class="col-sm-12 col-xs-12 col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
+      <h2 class="title">ログイン</h2>
+      <form>
+        <!-- メールアドレス -->
+        <div class="form-group">
+          <p class="error-msg" id="email-err-msg">メールアドレスを入力してください</p>
+          <label for="email">E mail</label>
+          <input type="text" class="form-control" name="email" id="email" v-model="email">
+        </div>
+        <!-- パスワード -->
+        <div class="form-group">
+          <p class="error-msg" id="password-err-msg">パスワードを入力してください</p>
+          <label for="password">パスワード</label>
+          <input type="password" class="form-control" name="password" id="password" v-model="password">
+        </div>
+        <button type="button" @click="signIn()" class="btn btn-primary">ログイン</button>
+      </form>
+    </div>
   </div>
 </template>
 <script>

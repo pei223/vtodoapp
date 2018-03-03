@@ -1,8 +1,8 @@
 <template>
-  <div class="main">
-    <div class="container">
-      <!-- ヘッダー -->
-      <navbar v-bind="{setTokenAPI, updateTokenAPI}" ref="header"></navbar>
+  <div class="container">
+    <!-- ヘッダー -->
+    <navbar v-bind="{setTokenAPI, updateTokenAPI}" ref="header"></navbar>
+    <div class="col-sm-12 col-xs-12 col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
       <h2 class="title">TODO LIST</h2>
 
       <!-- 検索ボックス -->
@@ -15,6 +15,7 @@
           <div id="todo-list">
             <!-- TODOのリスト表示 -->
             <div v-for="(todo, index) in todos" v-bind:id="'row-todo-' + todo.id" class="todo-box row">
+
               <!-- todo表示 -->
               <div v-bind:id="'todo-content-'+todo.id" class="todo-content">
                 <!-- todoのタイトル -->
@@ -35,8 +36,9 @@
 
                 <!-- todoのメニューボタン(削除と編集) -->
                 <div class="todo-toolbox">
-                  <button @click="deleteTodo(todo.id)" class="todo-toolbutton btn btn-danger" title="削除する"><i class="fa fa-trash"></i></button>
-                  <button @click="todo.edit=showEditForm(index);" class="todo-toolbutton btn btn-info" title="編集する"><i class="fa fa-pencil-square-o"></i></button>
+                  <button @click="deleteTodo(todo.id)" class="todo-toolbutton btn btn-danger" title="削除する"><i class="fa fa-trash fa-lg"></i></button>
+                  <button @click="todo.edit=showEditForm(index);" class="todo-toolbutton btn btn-info" title="編集する"><i class="fa fa-pencil-square-o fa-lg"></i></button>
+                  <button @click="tweetTodo(index)" class="todo-toolbutton btn btn-primary" title="ツイートする">tweet&nbsp;<i class="fa fa-twitter fa-lg"></i></button>
                 </div>
               </div>
 
@@ -61,7 +63,7 @@
                     <textarea v-bind:id="'input-todo-'+todo.id" class="form-control" :rows="todo.todo.split('\n').length+1">{{todo.todo}}</textarea>
                   </div>
                 </form>
-                <!-- メニューボタン(保存、変更) -->
+                <!-- メニューボタン(保存、変更キャンセル) -->
                 <div class="todo-toolbox">
                   <button @click="updateTodo(todo.id, index)" class="todo-toolbutton btn btn-primary" title="保存する"><i class="fa fa-upload"></i></button>
                   <button @click="hideEditForm(index, todo.id);" class="todo-toolbutton btn btn-warning" title="変更をキャンセルする"><i class="fa fa-times"></i></button>
@@ -317,6 +319,30 @@
       getDisplayDate: function(date) {
         return moment(date).format("YYYY MM/DD(dddd) HH:mm");
       },
+
+      /**
+      * tweetTodo
+      * TODOの内容をツイートする
+      * @param index: todoのthis.todos上のインデックス
+      */
+      tweetTodo: function (index) {
+        var todo = this.todos[index];
+        var textToTweet = "";
+        /* 完了したかしてないかで内容を変える */
+        if (todo.finish) {
+          textToTweet += "TODOを完了しました！\r\n";
+        } else {
+          textToTweet += "TODOが追加されました！\r\n";
+        }
+        /* TODOのタイトルの最初の100文字くらいをツイート */
+        textToTweet += todo.title.substr(0, 100);
+        if (todo.title.length >= 100) {
+          textToTweet += "...";
+        }
+        textToTweet += "\r\nhttp://vtodoapp.herokuapp.com/\r\n#vtodoapp";
+        var twtLink = 'http://twitter.com/home?status=' +encodeURIComponent(textToTweet);
+        window.open(twtLink,'_blank');
+      }
     }
   }
 </script>

@@ -1,44 +1,46 @@
 <template>
   <div class="container">
-    <navbar v-bind="{setTokenAPI, updateTokenAPI}"></navbar>
-    <h2 class="title">ユーザー情報編集</h2>
-    <form>
-      <!-- メールアドレス -->
-      <h5 class="subtitle">メールアドレス変更</h5>
-      <div class="form-group">
-        <p class="error-msg" id="email-error-msg"></p>
-        <label for="email">メールアドレス</label>
-        <input type="text" v-model="email" id="email" class="form-control"/>
-      </div>
-      <br />
-      <!-- パスワード変更 -->
-      <h5 class="subtitle">パスワード変更</h5>
-      <div class="form-group">
-        <p class="error-msg" id="password-error-msg"></p>
-        <label for="password">パスワード</label>
-        <input type="password" v-model="password" id="password" class="form-control"/>
-      </div>
-      <!-- パスワード変更の再入力 -->
-      <div class="form-group">
-        <p class="error-msg" id="password_confirmation-error-msg"></p>
-        <label for="password_confirmation">パスワード再入力</label>
-        <input type="password" v-model="password_confirmation" id="password_confirmation" class="form-control"/>
-      </div>
-      <p style="padding-bottom: 50px"></p>
-      <!-- 現在のパスワード -->
-      <h5 class="subtitle">変更には現在のパスワードが必要です</h5>
-      <div class="form-group">
-        <p class="error-msg" id="current_password-error-msg"></p>
-        <label for="current_password">パスワード再入力</label>
-        <input type="password" v-model="current_password" id="current_password" class="form-control"/>
-      </div>
-      <!-- 更新と削除ボタン -->
-      <div class="form-group">
-        <button type="button" class="btn btn-primary col-sm-12 col-xs-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3" @click="updateUser()">更新する</button>
-        <p style="padding-bottom: 80px;"></p>
-        <button type="button" class="btn btn-danger col-sm-12 col-xs-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3" @click="deleteUser()">アカウントを削除する</button>
-      </div>
-    </form>
+    <div class="col-sm-12 col-xs-12 col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
+      <h2 class="title">ユーザー情報編集</h2>
+      <navbar v-bind="{setTokenAPI, updateTokenAPI}"></navbar>
+      <form>
+        <!-- メールアドレス -->
+        <h5 class="subtitle">メールアドレス変更</h5>
+        <div class="form-group">
+          <p class="error-msg" id="email-error-msg"></p>
+          <label for="email">メールアドレス</label>
+          <input type="text" v-model="email" id="email" class="form-control"/>
+        </div>
+        <br />
+        <!-- パスワード変更 -->
+        <h5 class="subtitle">パスワード変更</h5>
+        <div class="form-group">
+          <p class="error-msg" id="password-error-msg"></p>
+          <label for="password">パスワード</label>
+          <input type="password" v-model="password" id="password" class="form-control"/>
+        </div>
+        <!-- パスワード変更の再入力 -->
+        <div class="form-group">
+          <p class="error-msg" id="password_confirmation-error-msg"></p>
+          <label for="password_confirmation">パスワード再入力</label>
+          <input type="password" v-model="password_confirmation" id="password_confirmation" class="form-control"/>
+        </div>
+        <p style="padding-bottom: 50px"></p>
+        <!-- 現在のパスワード -->
+        <h5 class="subtitle">変更には現在のパスワードが必要です</h5>
+        <div class="form-group">
+          <p class="error-msg" id="current_password-error-msg"></p>
+          <label for="current_password">パスワード再入力</label>
+          <input type="password" v-model="current_password" id="current_password" class="form-control"/>
+        </div>
+        <!-- 更新と削除ボタン -->
+        <div class="form-group">
+          <button type="button" class="btn btn-primary col-sm-12 col-xs-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3" @click="updateUser()">更新する</button>
+          <p style="padding-bottom: 80px;"></p>
+          <button type="button" class="btn btn-danger col-sm-12 col-xs-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3" @click="deleteUser()">アカウントを削除する</button>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
 <script>

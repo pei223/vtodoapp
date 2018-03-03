@@ -13,6 +13,10 @@
   font-size: 120%;
   color: red;
 }
+.container {
+  background-color: white;
+  padding-bottom: 50px !important;
+}
 #top_button{
   width: 40px;
   height: 40px;
